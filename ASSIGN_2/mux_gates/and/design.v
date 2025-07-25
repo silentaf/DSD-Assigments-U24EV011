@@ -1,11 +1,5 @@
 module and_mux(input[1:0] in, input sel, output reg out);
-  always @(*)
-    begin
-      case(sel)
-        1'b0: out=in[0];
-        1'b1: out=in[1];
-      endcase
-    end
+  assign out= sel? (in[0] & in[1]): 1'b0;
      
 
 endmodule
