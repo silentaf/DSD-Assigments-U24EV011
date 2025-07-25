@@ -1,13 +1,4 @@
-module full_adder_behavioral (
-  input A, B, Cin,
-  output reg Sum, Cout
-);
-
-  always @ (A or B or Cin) begin
-
-    Sum = (A ^ B) ^ Cin;
-
-    Cout = (A & B) | (B & Cin) | (A & Cin);
-  end
-
+module fa_behav( input a, input b, input cin, output cout, output sum);
+  assign sum= a^b ^cin;
+  assign cout= a&b | b&cin |cin&a;
 endmodule
